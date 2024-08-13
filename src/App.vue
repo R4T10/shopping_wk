@@ -1,11 +1,17 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div>
+    <router-view />
+  </div>
 </template>
-
+<script>
+// import NavBarComponent from "@/components/NavBarComponent.vue";
+export default {
+  inject: ["GStore"],
+  // components: {
+  //   NavBarComponent,
+  // },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
