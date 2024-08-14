@@ -18,12 +18,14 @@ export default {
           );
           GStore.currentUser = response.data.data.username;
           console.log(GStore.currentUser);
+          GStore.user_info = response.data.data;
         } else {
           localStorage.setItem(
             "user",
             JSON.stringify(response.data.data.email)
           );
           GStore.currentUser = response.data.data.email;
+          GStore.user_info = response.data.data;
         }
 
         return Promise.resolve(response.data);

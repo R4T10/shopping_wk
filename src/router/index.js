@@ -4,6 +4,8 @@ import NavBar from "../views/NavBar.vue";
 import LoginView from "@/views/LoginView.vue";
 import GStore from "@/store";
 import ProductService from "@/service/ProductService";
+import ProductDetail from "@/views/ProductDetail.vue";
+import CartView from "@/views/CartView.vue";
 const routes = [
   {
     path: "",
@@ -25,6 +27,21 @@ const routes = [
         name: "about",
         component: () =>
           import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+      },
+      {
+        path: "/product/:id",
+        name: "ProductDetailView",
+        component: ProductDetail,
+        beforeEnter: (to) => {
+          console.log(to.params.id);
+          return ProductService.getProduct(to.params.id);
+        },
+        props: true,
+      },
+      {
+        path: "/cart",
+        name: "CartView",
+        component: CartView,
       },
     ],
   },

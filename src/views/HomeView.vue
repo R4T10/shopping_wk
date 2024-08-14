@@ -1,13 +1,16 @@
 <template>
   <div class="container mx-auto py-8">
-    <h1 class="text-2xl font-bold text-center mb-8">Home Page</h1>
-    <CarouselComponent />
+    <!-- <h1 class="text-2xl font-bold text-center mb-8">Home Page</h1> -->
+    <div class="mb-12">
+      <CarouselComponent />
+    </div>
+    <h1 class="text-2xl font-bold text-center mb-20">Reccommend</h1>
     <div class="flex flex-wrap justify-center gap-4">
       <CardProduct
         v-for="product in GStore.productList"
         :key="product.id"
         :product="product"
-        class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
+        class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-10"
       />
     </div>
   </div>
